@@ -13,13 +13,25 @@ Maven is not needed. The wrapper downloads it on the first run. Selenium Manager
 
 ## Running the tests
 
-From the repository root:
+From the repository root, in Git Bash, macOS or Linux:
 
 ```bash
 ./mvnw clean test
 ```
 
-On Windows use `.\mvnw.cmd` in PowerShell or `mvnw.cmd` in cmd instead of `./mvnw`.
+In Windows PowerShell:
+
+```powershell
+.\mvnw.cmd clean test
+```
+
+In Windows cmd:
+
+```bat
+mvnw.cmd clean test
+```
+
+The table below uses `./mvnw`. Swap in the command for your shell.
 
 | Goal | Command |
 |---|---|
