@@ -19,7 +19,7 @@ From the repository root:
 ./mvnw clean test
 ```
 
-On Windows PowerShell or cmd use `mvnw.cmd` instead of `./mvnw`.
+On Windows use `.mvnw.cmd` in PowerShell or `mvnw.cmd` in cmd instead of `./mvnw`.
 
 | Goal | Command |
 |---|---|
