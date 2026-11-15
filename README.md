@@ -6,7 +6,7 @@ Two automation projects in one Maven build. `ui-tests` drives https://the-intern
 ## Prerequisites
 
 - JDK 17 or newer, with `JAVA_HOME` set. Built and tested on Temurin 21.
-- Google Chrome. Edge and Firefox also work, see below.
+- Microsoft Edge (installed with Windows 11). Chrome and Firefox also work, see below.
 - Internet access. Both targets are public sites.
 
 Maven is not needed. The wrapper downloads it on the first run. Selenium Manager downloads the matching browser driver.
@@ -38,7 +38,7 @@ The table below uses `./mvnw`. Swap in the command for your shell.
 | UI tests only | `./mvnw clean test -pl ui-tests -am` |
 | API tests only | `./mvnw clean test -pl api-tests -am` |
 | Show the browser | `./mvnw clean test -pl ui-tests -am -Dheadless=false` |
-| Another browser | `./mvnw clean test -pl ui-tests -am -Dbrowser=edge` |
+| Another browser | `./mvnw clean test -pl ui-tests -am -Dbrowser=chrome` (or `firefox`) |
 | Another target URL | `./mvnw clean test -Dbase.url=https://example.test -Dapi.base.url=https://api.example.test` |
 
 UI tests run headless by default. Any key in `config.properties` can be overridden with `-Dkey=value` or an environment variable (`HEADLESS=false`, `API_BASE_URL=...`). Order of precedence: system property, environment variable, file.
