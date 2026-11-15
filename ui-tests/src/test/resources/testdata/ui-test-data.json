@@ -1,0 +1,8 @@
+{
+  "fileUploads": [
+    { "resource": "files/sample-upload.png", "expectedHeading": "File Uploaded!" }
+  ],
+  "dynamicLoading": [
+    { "example": 2, "expectedText": "Hello World!" }
+  ]
+}
