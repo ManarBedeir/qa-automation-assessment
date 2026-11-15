@@ -29,7 +29,7 @@ public abstract class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        driver = Browser.from(Config.get("browser")).create(Config.getBoolean("headless"));
+        driver = Browser.resolve(Config.get("browser")).create(Config.getBoolean("headless"));
         driver.manage().timeouts().pageLoadTimeout(Config.getSeconds("page.load.timeout.seconds"));
     }
 

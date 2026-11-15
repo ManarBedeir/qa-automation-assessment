@@ -45,6 +45,10 @@ public enum Browser {
 
     public abstract WebDriver create(boolean headless);
 
+    public static Browser resolve(String name) {
+        return "auto".equalsIgnoreCase(name.trim()) ? BrowserDetector.detect() : from(name);
+    }
+
     public static Browser from(String name) {
         try {
             return valueOf(name.trim().toUpperCase());

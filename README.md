@@ -6,7 +6,7 @@ Two automation projects in one Maven build. `ui-tests` drives https://the-intern
 ## Prerequisites
 
 - JDK 17 or newer, with `JAVA_HOME` set. Built and tested on Temurin 21.
-- Microsoft Edge (installed with Windows 11). Chrome and Firefox also work, see below.
+- A browser: Chrome, Edge or Firefox. The tests use the system default browser if it is one of these, otherwise the first one installed (Chrome, Edge, Firefox).
 - Internet access. Both targets are public sites.
 
 Maven is not needed. The wrapper downloads it on the first run. Selenium Manager downloads the matching browser driver.
@@ -38,7 +38,7 @@ The table below uses `./mvnw`. Swap in the command for your shell.
 | UI tests only | `./mvnw clean test -pl ui-tests -am` |
 | API tests only | `./mvnw clean test -pl api-tests -am` |
 | Show the browser | `./mvnw clean test -pl ui-tests -am -Dheadless=false` |
-| Another browser | `./mvnw clean test -pl ui-tests -am -Dbrowser=chrome` (or `firefox`) |
+| Fixed browser | `./mvnw clean test -pl ui-tests -am -Dbrowser=chrome` (or `edge`, `firefox`) |
 | Another target URL | `./mvnw clean test -Dbase.url=https://example.test -Dapi.base.url=https://api.example.test` |
 
 UI tests run headless by default. Any key in `config.properties` can be overridden with `-Dkey=value` or an environment variable (`HEADLESS=false`, `API_BASE_URL=...`). Order of precedence: system property, environment variable, file.
@@ -68,6 +68,8 @@ api-tests/
 Page objects hold the locators and the actions of one page. Each action returns the page the user lands on, so a test reads as the manual steps: `openHomePage().openDynamicLoading().openExample(2).start().resultText()`.
 
 The API follows the same idea. `BooksService` is the only place that knows paths and HTTP verbs. `BaseService` sets the base URI, content type, timeouts and failure logging once.
+
+The browser is set with `browser=auto` in `config.properties`. `BrowserDetector` reads the system default (Windows registry, `xdg-settings` on Linux) and falls back to whichever supported browser is installed.
 
 Test data lives in JSON files and is mapped to records. TestNG data providers feed the tests, so a new case is a new JSON entry. URLs, browser and timeouts are in `config.properties`.
 
