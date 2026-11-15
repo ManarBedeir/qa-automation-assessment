@@ -1,5 +1,5 @@
 # QA Automation Assessment
-n[![Tests](https://github.com/ManarBedeir/qa-automation-assessment/actions/workflows/tests.yml/badge.svg)](https://github.com/ManarBedeir/qa-automation-assessment/actions/workflows/tests.yml)
+[![Tests](https://github.com/ManarBedeir/qa-automation-assessment/actions/workflows/tests.yml/badge.svg)](https://github.com/ManarBedeir/qa-automation-assessment/actions/workflows/tests.yml)
 
 Two automation projects in one Maven build. `ui-tests` drives https://the-internet.herokuapp.com with Selenium WebDriver (file upload, dynamic loading). `api-tests` calls the FakeRESTApi Books endpoints with REST Assured. Both use TestNG.
 
