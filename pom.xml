@@ -12,6 +12,7 @@
 
     <modules>
         <module>test-commons</module>
+        <module>ui-tests</module>
     </modules>
 
     <properties>
