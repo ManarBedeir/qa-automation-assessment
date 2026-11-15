@@ -1,0 +1,22 @@
+{
+  "existingBooks": [
+    { "id": 1, "title": "Book 1" },
+    { "id": 200, "title": "Book 200" }
+  ],
+  "newBooks": [
+    {
+      "id": 201,
+      "title": "Practical Test Automation",
+      "description": "Notes on building maintainable UI and API test suites.",
+      "pageCount": 320,
+      "excerpt": "Start with the risks, then pick the tests.",
+      "publishDate": "2026-11-15T10:00:00Z"
+    }
+  ],
+  "invalidBookIds": [
+    { "id": "0", "expectedStatus": 404, "expectedTitle": "Not Found" },
+    { "id": "201", "expectedStatus": 404, "expectedTitle": "Not Found" },
+    { "id": "-1", "expectedStatus": 404, "expectedTitle": "Not Found" },
+    { "id": "abc", "expectedStatus": 400, "expectedTitle": "One or more validation errors occurred." }
+  ]
+}

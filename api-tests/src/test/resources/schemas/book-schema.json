@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": ["id", "title", "pageCount", "publishDate"],
+  "properties": {
+    "id": { "type": "integer" },
+    "title": { "type": ["string", "null"] },
+    "description": { "type": ["string", "null"] },
+    "pageCount": { "type": "integer" },
+    "excerpt": { "type": ["string", "null"] },
+    "publishDate": { "type": "string" }
+  },
+  "additionalProperties": false
+}
